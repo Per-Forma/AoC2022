@@ -24,10 +24,8 @@ def ingestdata(data):
         rs_compartment_2 = rs_contents[int(item_count/2):]
         for item in rs_compartment_1:
             if item in rs_compartment_2:
-                if item in matches_list:
-                    continue
-                else:
-                    matches_list.append(item)
+                matches_list.append(item)
+                break
     for item in matches_list:
         item_score = point_dict[item]
         total_rucksack_points += item_score
@@ -35,6 +33,6 @@ def ingestdata(data):
 
 
 if __name__ == '__main__':
-    inputdata = open('input2', 'r')
+    inputdata = open('input', 'r')
     ingested = ingestdata(inputdata)
     print(ingested)
