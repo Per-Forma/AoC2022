@@ -1,4 +1,4 @@
-# Day 4 Puzzle 1
+# Day 4 Puzzle 2
 
 
 def ingestdata(data):
@@ -12,7 +12,7 @@ def ingestdata(data):
         elf2sitesrange = seperate_sites[1].split('-')
         elf1sites = list(range(int(elf1sitesrange[0]), int(elf1sitesrange[1])+1))
         elf2sites = list(range(int(elf2sitesrange[0]), int(elf2sitesrange[1])+1))
-        if all(item in elf1sites for item in elf2sites) or all(item in elf2sites for item in elf1sites):
+        if any(item in elf1sites for item in elf2sites) or any(item in elf2sites for item in elf1sites):
             score += 1
     return score
 
