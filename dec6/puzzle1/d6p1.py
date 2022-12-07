@@ -18,15 +18,15 @@ def ingestdata(data):
         buffer_selection.append(single_char)
     for index, char in enumerate(char_bytes):
         buffer_selection.append(char)
-        if len(buffer_selection) > 4:
+        if len(buffer_selection) > chars_in_buffer:
             buffer_selection.pop(0)
         count_of_uniques = Counter(buffer_selection)
 
-        if len(count_of_uniques) < 4:
+        if len(count_of_uniques) < chars_in_buffer:
             continue
         # To calculate winner, we need to add 4 to index to calculate how many characters were processed.
         # Three for the initialization loop, and one for the start from 0 index
-        start_of_unique_buffer = index + 4
+        start_of_unique_buffer = index + chars_in_buffer
         break
     return start_of_unique_buffer
 
